@@ -25,7 +25,8 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from '@/plugins/api'
+
 export default {
   data () {
     return {
@@ -36,11 +37,10 @@ export default {
     this.getTodos()
   },
   methods: {
-    getTodos () {
-      axios.get('https://jsonplaceholder.typicode.com/todos').then(response => {
-        this.todos = response.data
-        console.log(response)
-      }).catch(e => console.log(e))
+    async getTodos () {
+      const response = await api.get('todos')
+      this.todos = response.data
+      console.log(response)
     }
   }
 }
