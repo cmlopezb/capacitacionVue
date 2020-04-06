@@ -9,15 +9,15 @@
       </v-app-bar>
 
       <v-navigation-drawer v-model="drawer" app class="grey">
-        <v-list v-for="link in links" :key="link.text">
-            <v-list-tile>
-              <v-list-tile-action>
-                <v-icon class="indigo--text">{{ link.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <router-link :to="link.route" class="white--text"> {{ link.text }} </router-link>
-              </v-list-tile-content>
-            </v-list-tile>
+        <v-list>
+          <v-list-item :to="link.route" v-for="link in links" :key="link.text">
+            <v-list-item-action>
+              <v-icon class="indigo--text">{{ link.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              {{ link.text }}
+            </v-list-item-content>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
   </nav>

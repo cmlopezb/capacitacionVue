@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from '@/plugins/api'
+
 export default {
   data () {
     return {
@@ -30,11 +31,11 @@ export default {
     this.getComents()
   },
   methods: {
-    getComents () {
-      axios.get('https://jsonplaceholder.typicode.com/comments').then(response => {
-        this.coments = response.data
-        console.log(response)
-      }).catch(e => console.log(e))
+    async getComents () {
+      const { data } = await api.get('comments')
+
+      this.coments = data
+      console.log(data)
     }
   }
 }
