@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"capacitacion45d342c9": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

@@ -1,5 +1,6 @@
 <template>
   <div class="information">
+    <Navbar />
     <h1>Informacion</h1>
     <div>
       <v-simple-table>
@@ -26,8 +27,10 @@
 
 <script>
 import api from '@/plugins/api'
+import Navbar from '@/components/Navbar'
 
 export default {
+  components: { Navbar },
   data () {
     return {
       todos: null
